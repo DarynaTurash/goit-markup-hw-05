@@ -73,7 +73,7 @@ img {
     margin: -1px;
 }
 
-.button {
+button {
     cursor: pointer;
     border: 0;
     padding: 0;
@@ -583,11 +583,11 @@ background-color: var(--overlays-shadows-headings);
     width: 100%;
     height: 100%;
 
-    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socnetwork-link.footer:is(:hover, :focus) {
-    background: var(--valid-fields);
+    background-color: var(--valid-fields);
     border-radius: 50%;
 }
 
@@ -640,19 +640,17 @@ margin-bottom: 72px;
 
     color: var(--acent-color);
     background-color: var(--light-background);
-    border: 1px solid #E7E9FC;
+    border: 1px solid var(--sutle-backgrounds);
     border-radius: 4px;
     padding: 12px 24px;
     
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.works-btn:hover,
-.works-btn:focus {
+.works-btn:is(:hover, :focus) {
     color: var(--contrast-color-of-text);
     background-color: var(--hover-focus-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -670,8 +668,9 @@ margin-bottom: 72px;
 .card {
     width: calc((100% - 72px) / 3);
     margin: 24px 12px 24px 12px;
-    
-    }
+
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
 
 
 .card-link {
@@ -682,7 +681,7 @@ margin-bottom: 72px;
     
 }
 
-.card-link:hover {
+.card-link:is(:hover, :focus) {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
@@ -722,7 +721,7 @@ margin-bottom: 72px;
     max-width: 296px;
 }
 
-.card-link:hover .portfolio-overlay {
+.card-link:is(:hover, :focus) .portfolio-overlay {
     transform: translateY(0);
 }
 
@@ -768,7 +767,7 @@ margin-bottom: 72px;
     height: 100%;
 
     opacity: 1;
-    transition: opacity 250ms ubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -804,17 +803,20 @@ margin-bottom: 72px;
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background: var(--sutle-backgrounds);
+    background-color: var(--sutle-backgrounds);
     border: 1px solid rgba(0, 0, 0, 0.1);
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-button-exit:is(:hover,:focus) {
+.modal-button-exit:is(:hover, :focus) {
     background-color: var(--hover-focus-color);
     border: 1px solid var(--hover-focus-color);
 }
 
 .modal-icon-exit {
     fill: #000000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-icon-exit:is(:hover, :focus) {
